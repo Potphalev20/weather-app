@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f3f5f2">
+<title>Weather | Local forecast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page-shell">
+    <header class="topbar">
+        <a class="brand" href="#" aria-label="Weather home">
+            <span class="brand-mark" aria-hidden="true">W</span>
+            <span>weather<span class="brand-dot">.</span></span>
+        </a>
+        <p class="topbar-note">A clearer look at your day</p>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="fgit init -b main
+git add .
+git commit -m "Initial commit"alse" aria-label="Switch to dark mode">
+            <span id="themeIcon" aria-hidden="true">☾</span>
+            <span id="themeLabel">Dark mode</span>
+        </button>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+        <div>
+            <p class="eyebrow">YOUR LOCAL FORECAST</p>
+            <h1 id="page-title">Weather, <span>in focus.</span></h1>
+            <p class="intro-copy">Find the conditions and outlook for any place.</p>
+        </div>
+        <form class="search-box" id="searchForm">
+            <label class="sr-only" for="city">Search for a city</label>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input type="search" id="city" placeholder="Search a city..." autocomplete="off" required>
+            <button type="submit">Search <span aria-hidden="true">→</span></button>
+        </form>
+    </section>
+
+    <div id="status" class="status" role="status" aria-live="polite">Search for a city to see its weather.</div>
+
+    <section id="weatherResult" class="weather-layout" aria-live="polite" hidden>
+        <article class="current-panel">
+            <div class="current-heading">
+                <div>
+                    <p class="eyebrow">CURRENT WEATHER</p>
+                    <h2 id="locationName"></h2>
+                    <p id="locationDate" class="location-date"></p>
+                </div>
+                <span id="currentIcon" class="current-icon" aria-hidden="true"></span>
+            </div>
+            <div class="temperature-line">
+                <span id="currentTemp" class="temperature"></span>
+                <div class="condition-copy">
+                    <p id="currentCondition"></p>
+                    <span>Feels like <strong id="feelsLike"></strong></span>
+                </div>
+            </div>
+            <div class="weather-stats">
+                <div class="stat-item"><span class="stat-icon" aria-hidden="true">◌</span><div><span>Humidity</span><strong id="humidity"></strong></div></div>
+                <div class="stat-item"><span class="stat-icon wind-icon" aria-hidden="true">↗</span><div><span>Wind</span><strong id="wind"></strong></div></div>
+                <div class="stat-item"><span class="stat-icon" aria-hidden="true">☂</span><div><span>Rain chance</span><strong id="rainChance"></strong></div></div>
+            </div>
+        </article>
+
+        <section class="forecast-panel" aria-labelledby="forecast-title">
+            <div class="section-heading">
+                <div><p class="eyebrow">THE WEEK AHEAD</p><h2 id="forecast-title">5-day forecast</h2></div>
+                <span class="unit-label">°C</span>
+            </div>
+            <div id="forecastList" class="forecast-list"></div>
+        </section>
+
+        <section class="map-panel" aria-labelledby="map-title">
+            <div class="section-heading map-heading">
+                <div><p class="eyebrow">AROUND YOU</p><h2 id="map-title">Location map</h2></div>
+                <span class="map-pin" aria-hidden="true">⌖</span>
+            </div>
+            <div class="map-frame"><iframe id="locationMap" title="Map showing the searched location" loading="lazy" referrerpolicy="no-referrer"></iframe></div>
+            <p id="mapCaption" class="map-caption"></p>
+        </section>
+    </section>
+
+    <footer class="page-footer"><span>Map data © OpenStreetMap contributors</span></footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
